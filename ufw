@@ -1,4 +1,14 @@
+#!/bin/bash
+
+#deny all default
 sudo ufw default deny outgoing
 sudo ufw default deny incoming
+
+#webmin
 sudo ufw allow from 192.168.1.100 to any port 10000:10010 proto tcp
+
+#ssh
 sudo ufw allow from any to any port 22
+
+#nfs
+ufw allow to 192.168.1.100 port nfs
